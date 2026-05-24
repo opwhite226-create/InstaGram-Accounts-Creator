@@ -73,5 +73,9 @@ class InstagramDeepLinkBot:
             res_final = self.session.post(url_final, headers=final_headers, data=data_final)
             return res_final.json()
         return "Failed to get signup_token"
-bot = InstagramDeepLinkBot("theresanext@duck.com")
+user_email = input("Enter the email address: ")
+
+# Pass the user's input to the bot
+
+bot = InstagramDeepLinkBot(user_email)
 print(json.dumps(bot.run(), indent=2))
